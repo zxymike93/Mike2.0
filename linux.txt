@@ -1,0 +1,38 @@
+"""
+linux 操作笔记
+
+"""
+
+install google-chrome browser:
+	sudo apt-get install libxss1 libappindicator1 libindicator7
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	sudo dpkg -i google-chrome*.deb
+
+
+curl(下载器):
+	sudo apt-get install curl
+
+
+pyenv:
+	install:
+		curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+		  AND
+		save three lines in .bashrc:
+			export PATH="~/.pyenv/bin:$PATH"
+			eval "$(pyenv init -)"
+			eval "$(pyenv virtualenv-init -)"
+		  AND
+		source ~/.bashrc
+	
+	update:
+		pyenv update
+
+	uninstall:
+		rm -fr ~/.pyenv
+			AND
+		remove three lines from .bashrc:
+			export PATH="~/.pyenv/bin:$PATH"
+			eval "$(pyenv init -)"
+			eval "$(pyenv virtualenv-init -)"
+
+
