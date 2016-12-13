@@ -36,3 +36,9 @@ pyenv:
 			eval "$(pyenv virtualenv-init -)"
 
 
+- less 可翻页的阅读文件
+- file 文件类型
+
+### 使用最多的！ls  
+ls -l 长模式，其他选项通常围绕这个选项展开  
+ls /usr/bin/ 指定ls的路径  
