@@ -37,3 +37,6 @@
 
 - [Django LiveServerTestCase 子类编写功能测试](https://github.com/gayu-mike/goat/blob/master/superlists/functional_tests/tests.py)
 
+### Day7
+
+- 工作项目的功能测试: selenium 的几个 api (可以看看爬虫 selenium 的使用)
