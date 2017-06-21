@@ -40,3 +40,17 @@
 ### Day7
 
 - 工作项目的功能测试: selenium 的几个 api (可以看看爬虫 selenium 的使用)
+
+### Day8
+
+- Python Style
+
+### Day9
+
+- [Django Request /
+  Response](https://github.com/gayu-mike/180Days/commit/bb080844cc9e4f4dba7acdab899e35ee9bac8efa)
+
+### Day10
+
+- [Python Tutorial's Errors and Exceptions
+  part](https://github.com/gayu-mike/180Days/blob/master/python_errors_exceptions.md)
