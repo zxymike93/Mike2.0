@@ -54,3 +54,17 @@
 
 - [Python Tutorial's Errors and Exceptions
   part](https://github.com/gayu-mike/180Days/blob/master/python_errors_exceptions.md)
+
+### Day11
+
+- Gunicorn / Nginx 配置
+
+### Day12
+
+- 部署实践
+
+### Day13
+### Day14
+### Day15
+### Day16
+### Day17
