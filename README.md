@@ -43,28 +43,37 @@
 
 ### Day8
 
-- Python Style
+- [Python Style](https://github.com/gayu-mike/180Days/blob/master/python_style.md)
 
 ### Day9
 
-- [Django Request /
-  Response](https://github.com/gayu-mike/180Days/commit/bb080844cc9e4f4dba7acdab899e35ee9bac8efa)
+- [Django Request / Response](https://github.com/gayu-mike/180Days/commit/bb080844cc9e4f4dba7acdab899e35ee9bac8efa)
 
 ### Day10
 
-- [Python Tutorial's Errors and Exceptions
-  part](https://github.com/gayu-mike/180Days/blob/master/python_errors_exceptions.md)
+- [Python Tutorial's Errors and Exceptions part](https://github.com/gayu-mike/180Days/blob/master/python_errors_exceptions.md)
 
 ### Day11
 
-- Gunicorn / Nginx 配置
+- Gunicorn / [Nginx](https://github.com/gayu-mike/180Days/blob/master/nginx.md) 配置
 
 ### Day12
 
-- 部署实践
+- [部署实践](https://github.com/gayu-mike/goat/blob/master/docs/REMEMER.md)
 
 ### Day13
 ### Day14
 ### Day15
 ### Day16
 ### Day17
+
+- Model Form
+- save()
+
+### Day18
+
+- [Django Form Validation](http://usyiyi.cn/translate/django_182/topics/forms/modelforms.html)
+
+### Day19
+### Day20
+### Day21
