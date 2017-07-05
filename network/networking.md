@@ -34,7 +34,16 @@
 ### socket
 > 网络上的两个程序通过一个双向的通信连接实现数据的交换，这个连接的一端称为一个socket。它是跨平台的。
 > Python Lib/socket.py 实现了 socket 的 Python 接口。
+- socket.socket()
 - socket.recv(buff)
 - socket.connect((host, port))
 - socket.send(bytes)
 - socket.sendall(bytes)
+- socket.bind((host, port))
+- socket.listen(int)
+- socket.accept() -> (conn, addr) -> addr=host,port
+
+### socket
+
+### urllib
+- urllib.request.urlopen()
