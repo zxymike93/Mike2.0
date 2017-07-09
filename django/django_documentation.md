@@ -1,14 +1,14 @@
 ### 阅读 Django 文档
 
-## 概览
-
-### 组织形式
-> 下面四个部分，从浅入深。尽量依次学习。
-
+### 概览
 - 教程
+> Django 的概览
 - Topics
-- References
+> Django 的绝大部分内容，也算是 Web 开发核心的一些 topics
 - How-to
+> 算是 Topics 的补充
+- API References
+> Django 源代码中的类、函数等的介绍
 
 ### Key Topics about Django
 - 安装 Django
@@ -35,6 +35,24 @@
 - System check framework
 - 拓展包
 
-### API Reference
-
 ### How-to
+- 使用 Web 服务器负责 Auth
+- 自定义 django-admin 命令
+- 自定义 models fields
+- 自定义 lookups
+- 自定义 Template tags 和 filters
+- 自定义文件存储系统
+- 部署
+- 升级 Django 版本
+- report errors
+- 为 Models 提供初始化数据
+- Running Django on Jython
+- 集成已有数据库到 Django 中
+- 在视图中提供 CSV 响应
+- 在视图中提供 PDF 响应
+- 管理静态文件（images，JS，CSS等）
+- 部署静态文件
+- 在 Windows 上安装 Django
+- 编写数据库迁移脚本
+
+### API Reference
