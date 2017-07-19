@@ -86,4 +86,20 @@
 ### Day24
 ### Day25
 
-- [文章](http://www.zhengxinyu.cc/cheng-xu-yuan-xiu-lian-zhi-dao/)
+- [修炼之道](http://www.zhengxinyu.cc/cheng-xu-yuan-xiu-lian-zhi-dao/)
+
+### Day26
+### Day28
+
+- [Django 文档目录](https://github.com/gayu-mike/180Days/blob/master/django/django_documentation.md)
+
+### Day29
+### Day30
+### Day31
+### Day32
+### Day33
+### Day34
+### Day35
+### Day36
+### Day37
+### Day38

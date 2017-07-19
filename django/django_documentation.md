@@ -1,6 +1,4 @@
-### 阅读 Django 文档
-
-### 概览
+## 概览
 - 教程
 > Django 的概览
 - Topics
@@ -9,6 +7,8 @@
 > 算是 Topics 的补充
 - API References
 > Django 源代码中的类、函数等的介绍
+
+### [教程](http://www.zhengxinyu.cc/django-tutorials/)
 
 ### Key Topics about Django
 - 安装 Django
@@ -50,7 +50,7 @@
 - 集成已有数据库到 Django 中
 - 在视图中提供 CSV 响应
 - 在视图中提供 PDF 响应
-- 管理静态文件（images，JS，CSS等）
+- [管理静态文件](http://www.zhengxinyu.cc/guan-li-jing-tai-wen-jian/)
 - 部署静态文件
 - 在 Windows 上安装 Django
 - 编写数据库迁移脚本
