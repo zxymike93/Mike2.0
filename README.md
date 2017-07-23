@@ -90,3 +90,9 @@
 ### Day36
 ### Day37
 ### Day38
+### Day39
+### Day40
+### Day41
+### Day42
+
+- [SICP 1.1](http://www.zhengxinyu.cc/sicp1/)
