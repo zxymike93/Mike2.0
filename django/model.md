@@ -11,7 +11,6 @@
 - Database access optimization
 - Models之间关系的API
 
------
 
 ## Models
 
@@ -40,7 +39,6 @@
 #### Meta
 > 任何不是字段的数据
 
------
 
 ## Queries
 > Django自带的一套CRUD的API, [full references](https://docs.djangoproject.com/en/1.10/ref/models/)包含更多的SQL子句。
@@ -114,8 +112,6 @@ SELECT * from polls WHERE question LIKE 'Who%'
 > 复制：只需要 `pk = None`，如果有关联还要 `id = None`，不过关系不会被复制
 
 > 更新多个对象 QuerySet.update(key=value)，但它只能对一个表改动
-
----
 
 ## Aggregation
 > 汇总 -- 例如 MySQL 给出5个 aggregation function(AVG, COUNT, MAX, MIN, SUM)
@@ -192,10 +188,3 @@ class Store(models.Model):
 # 所有书店最贵最便宜的书
 >>> Store.objects.aggregate(min_price=Min('books__price'), max_price=Max('books__price'))
 ```
-
----
-
-## TableSpaces
-> [wikipedia关于表空间的介绍](https://en.wikipedia.org/wiki/Tablespace)
-> 简单来说就是组织磁盘布局，用于优化数据库系统性能。
-> 但也只有 PostgreSQL/Oracle 支持， SQLite/MySQL 均不支持。
