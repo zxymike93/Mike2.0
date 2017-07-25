@@ -51,7 +51,7 @@
 - 部署
 - 升级 Django 版本
 - report errors
-- 为 Models 提供初始化数据
+- [为 Models 提供初始化数据]()
 - Running Django on Jython
 - 集成已有数据库到 Django 中
 - 在视图中提供 CSV 响应

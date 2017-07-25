@@ -1,18 +1,5 @@
 # 180Days
 
-> 180Days 是记录我学习过程的项目，灵感来源在博客上概括地写了下来：
->
-> > http://www.zhengxinyu.cc/180-days/
->
-> 碍于记忆力较差，我总是忘记做过什么、准备做什么，更是常常忘记看过什么、学过什么、下一步掌握什么。
->
-> 因此这个**修行时间线**：
->
-> - 首先，要完成对知识点的标题性记录。
-> - 其次，把相关的笔记和标题关联起来。
-
-
-
 ### Day1 
 
 - [Python类的基础](https://github.com/gayu-mike/pratice/blob/master/person.py)
@@ -82,3 +69,30 @@
 
 - [TCP/IP 基本概念]()
 - socket 最基本的用法
+
+### Day24
+### Day25
+
+- [修炼之道](http://www.zhengxinyu.cc/cheng-xu-yuan-xiu-lian-zhi-dao/)
+
+### Day26
+### Day28
+
+- [Django 文档目录](https://github.com/gayu-mike/180Days/blob/master/django/django_documentation.md)
+
+### Day29
+### Day30
+### Day31
+### Day32
+### Day33
+### Day34
+### Day35
+### Day36
+### Day37
+### Day38
+### Day39
+### Day40
+### Day41
+### Day42
+
+- [SICP 1.1](http://www.zhengxinyu.cc/sicp1/)
