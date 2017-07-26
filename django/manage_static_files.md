@@ -52,3 +52,8 @@ location /static {
     alias /home/mac/sites/www.todolist.com/static;
 }
 ```
+
+> 另外值得一提的是： MEDIA 是不同的一样东西
+> static 的出现是为了处理（js/css/images...）等静态文件
+> media 则处理 Django 的文件上传（FileField/ImageField...）
+> 与之相关的两个属性书写格式为： `MEDIA_URL='/media/'` 和 `MEDIA_ROOT=os.path.join(BASE_DIR, 'media')`
