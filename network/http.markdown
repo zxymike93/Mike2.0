@@ -22,6 +22,112 @@
 10. HTML and Web App
 11. Web Exploit
 
+
+## 1. 网络基础
+> 分别从协议、Python两个角度来理解网络通信。
+
+先看下面4个程序，它们要完成同样的一件事：向googlemaps的API发出请求，得到响应中的部分数据。
+
+1. 这是3rd-party的库，针对googlemap的geocode API处理。
+    - 输入地址名
+    - 从预定义的数据结构中（这里是类）读取数据
+```python
+from pygeocoder import Geocoder
+
+def geocode(addr):
+    print(Geocoder.geocode(addr)[0].coordinates)
+```
+
+2. 这是著名的3rd-party库requests。
+    - 把地址构建成完整的url
+    - 指定请求方法
+    - 把响应构建成指定的格式
+    - 读取
+```python
+import requests
+
+def geocode(addr):
+    params = {
+        'address': addr,
+        'sensor': 'false',
+    }
+    url = 'http://maps.googleapis.com/maps/api/geocode/json'
+    r = requests.get(url, params=params).json()
+    print(r['results'][0]['geometry']['location'])
+```
+
+3. Python内置模块的 http.client / urllib.parse / json
+    - 构建完整的url
+    - 建立连接和指定请求方法
+    - 把响应构建成指定的格式
+    - 读取
+```python
+import json
+from http import client
+from urllib.parse import quote_plus
+
+
+def geocode(addr):
+    path = '/maps/api/geocode/json'
+    url = '{}?address={}&sensor=false'.format(path, quote_plus(addr))
+    conn = client.HTTPConnection('maps.google.com')
+    conn.request('GET', url)
+    r = conn.getresponse().read()
+    resp = json.loads(r.decode('utf-8'))
+    print(resp['results'][0]['geometry']['location'])
+```
+
+4. Python 内置的 socket
+    - 构建完整的 HTTP 报文
+        - 请求行（方法 url 协议版本）
+        - 请求头部
+    - 编码，发送请求
+    - 得到响应，编码
+    - 构建json格式
+```python
+import socket
+from urllib.parse import quote_plus
+
+
+def geocode(addr):
+    s = socket.socket()
+    s.connect(('maps.google.com', 80))
+    method = 'GET'
+    path = '/maps/api/geocode/json'
+    params = '?address={}&sensor=false'.format(quote_plus(addr))
+    protocol = 'HTTP/1.1'
+    headers = {
+        'Host': 'maps.google.com:80',
+        'User-Agent': 'search4.py (Foundations of Python Network Programming)',
+        'Connection': 'close',
+    }
+    header_str = ''
+    for k, v in headers.items():
+        header_str += '{}: {}\r\n'.format(k, v)
+
+    request = '{} {}{} {}\r\n{}\r\n'.format(
+        method, path, params, protocol, header_str)
+    s.sendall(request.encode('ascii'))
+
+    response = b''
+    while True:
+        r = s.recv(4096)
+        if not r:
+            break
+        response += r
+    print(r.decode('utf-8'))
+```
+
+从下往上，可以理解为一个封装的过程。
+    - socket模块在绝大部分情况下，是Python程序员会遇到的最底层的网络编程库了。再往下就是 TCP/IP 协议。
+    - 为了封装 HTTP 协议，解决 url 编码问题，各种文本数据格式、编码，Python 有对应的 http ／ urllib ／ json 等库和 bytes 编码。
+    - requests 提供上面这一些常见实现的封装，用更简单易读的方式提供 API
+    - 有时候我们使用外部网络工具（比如一些网站的 API），还有特地为其编写的第三方库能更简单地编写代码。
+
+
+
+
+
 ## 7. HTTPS
 TCP/IP 是公开通信的协议，而 HTTP 也是明文传输的。为了安全，只要使用了 SSL/TLS 通信的 HTTP（准确来说是 HTTP 先经过 SSL 再和 TCP 通信），称之为 HTTPS。（另外还有对 HTTP 报文主体加密的方式）
 
