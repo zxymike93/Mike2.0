@@ -66,7 +66,6 @@ import json
 from http import client
 from urllib.parse import quote_plus
 
-
 def geocode(addr):
     path = '/maps/api/geocode/json'
     url = '{}?address={}&sensor=false'.format(path, quote_plus(addr))
@@ -87,7 +86,6 @@ def geocode(addr):
 ```python
 import socket
 from urllib.parse import quote_plus
-
 
 def geocode(addr):
     s = socket.socket()
@@ -124,7 +122,36 @@ def geocode(addr):
     - requests 提供上面这一些常见实现的封装，用更简单易读的方式提供 API
     - 有时候我们使用外部网络工具（比如一些网站的 API），还有特地为其编写的第三方库能更简单地编写代码。
 
+通过 Python，我们简单地了解到协议：只不过是一些（使用编码的）字符或文本，通过约定的格式书写。
+其中 HTTP协议 的工作机制大致如上面所述，只是程序员大部分时间都在 1 2 层工作（类似于用 Django 处理，或者用 DRF 为 Django 的特定事务再封装一层）。
+[在接下来我会花时间分析 Django 源码中这些处理 HTTP协议 相关的部分，如：URL / request&response]()
+但在具体了解协议细节和编程实现之前，了解 HTTP 之下的 TCP/IP 协议，能更好地理解网络的工作，理解这个“黑箱”。
 
+###
+
+TCP/IP协议 中最重要的概念是分层，下图是简化的 TCP/IP通信传输流：
+[](https://etianqq.gitbooks.io/http/content/TCP-IP%20model2.jpg)
+
+在这个简单的模型里，各协议对应的层次：
+- 应用层：HTTP
+- 传输层：TCP
+- 网络层：IP
+- 链路层：网络相关的硬件以及驱动等
+
+以这个模型为基础的一次通信，是先从上往下地进入到互联网中，到达目的设备，再从下网上得重新构成完整HTTP报文的。
+再具体一点地描述，假设浏览器访问 google.com 这些关键部分的工作，如下：
+    请求：
+    1. 域名被 DNS 解析为 IP地址
+    2. 浏览器（客户端）负责构造一个完整的 HTTP报文
+    3. TCP 把报文分割为若干部分，
+    4. IP 把目的地的 IP地址和MAC地址 附上
+    5. 经过多个 routing，每个 routing 根据下一个 routing 的MAC地址进行转发
+    6. 包的一方，通过 TCP协议 重组原来的报文
+    7. 最后再由 HTTP协议 解读这段信息
+
+ip：routing 处理到下一站的传输
+tcp：可靠性、完整性
+dns：域名和ip间的转换
 
 
 
