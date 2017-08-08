@@ -1,6 +1,6 @@
 # 180Days
 
-### Day1 
+### Day1
 
 - [Python类的基础](https://github.com/gayu-mike/pratice/blob/master/person.py)
 
@@ -105,3 +105,11 @@
 ### Day48
 ### Day49
 ### Day50
+### Day51
+### Day52
+### Day53
+### Day54
+### Day55
+### Day56
+### Day57
+### Day58
