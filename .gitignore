@@ -1,0 +1,6 @@
+# cache
+__pycache__/
+
+# database source file
+*.sqlite
+*.db
