@@ -1,5 +1,6 @@
 # cache
 __pycache__/
+*.pyc
 
 # database source file
 *.sqlite

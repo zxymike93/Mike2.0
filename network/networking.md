@@ -1,3 +1,4 @@
+# 
 ### TCP基础
 > N个应用程序共享一条连接互联网的线路. TCP把每个通信拆分为很小的信息包, 因此用户感觉是几个程序同时在通信.
 
@@ -84,4 +85,62 @@ source(IP:port)-destination(IP:port)，至于如何分配端口，有3种方式�
 
 沿用了C的 socket。
 
-## 
+## Binding to Interfaces
+
+socket.bind() 不仅仅是端口，而已一对 (ip, port) 作为 socket name。
+试想一下自己的IP地址是192.168.1.5：
+可以同时开两个 server 监听 192.168.1.5:8080 和 127.0.0.1:8080 而不会冲突。
+不过 0.0.0.0 是一个特殊值，它包括了本地 127.0.0.1 和对外的ip。
+
+## UDP Fragmentation 帧
+
+有最大限长的。
+
+## Socket Options
+
+Linux man 的 socket, udp, tcp 部分有 socket options 的完整解释。
+在 Python 中可以通过 setsockopt() / getsockopt()。
+```python
+value = s.getsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, value)
+```
+
+## Broadcast
+
+`setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, -1)`
+
+比如设在 client 中，当向广播地址 192.168.1.255 发送 udp 请求，所有本地监听的 server 都会收到。
+
+## When to Use UDP
+
+当丢包和包的顺序等都不重要，而是希望请求响应小而快的时候。
+
+
+# TCP
+
+## TCP 是如何工作的
+
+1. 在每个数据包中加上序列号
+
+# 服务器构造
+
+## 多线程
+一个进程中的多个线程，监听同一个端口。
+```python
+from threading import Thread
+
+def start_threads(listener, workers=4):
+    for i in range(workers):
+        # run_server 接收一个 socket 实例并启动它
+        t = Thread(target=run_server, args=(listener,))
+        t.start()
+
+if __name__ == '__main__':
+    # 构造一个 socket 实例
+    listener = create_socket(addr)
+    start_threads(listener)
+```
+
+## SocketServer
+
+
