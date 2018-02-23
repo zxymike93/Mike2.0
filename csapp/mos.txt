@@ -1,0 +1,21 @@
+register: hold variables / temp results
+    1. program counter: contain memory addr of next instruction
+    2. stack pointer: point to top current stack in memory
+    >>> procedure's stack frame: holds things that are no kept in registers,
+    waiting for use
+    3. program status word:contains condition code bits, kinda like rights to
+    do something or not, eg kernel or user mode, cpu priority...
+
+CPU执行多程序会做所谓的“上下文切换”，就是通过保存/读取register来实现的。
+
+为了更快，CPU还有pipeline这个设计：比如execute n的时候就decode n+1, fetch
+n+2，就是“预测/预处理”常用的计算。
+
+以及superscalar设计，同时fetch多个操作，比如int、float、boolean三个计算同时被读取到一个buffer里面，execution
+unit available之后就从buffer里面执行/删除某个操作。
+
+
+A process is basically a program in execution, a container that holds all the
+infomation to run a program.
+
+A pipe is a sort of pseudofile that can be used to connect two processes
